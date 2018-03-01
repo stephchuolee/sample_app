@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       # Log the user in and redirect to user's show page
     else 
       # Create an error message
-      flash[:danger] = 'Invalid email/password combination' # Not quite right!
+      flash.now[:danger] = 'Invalid email/password combination' # flash.now is used because it displays flash messages on rendered pages, not reloads/additional requests
       render 'new'
     end
   end

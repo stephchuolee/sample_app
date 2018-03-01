@@ -33,5 +33,6 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
     end
     follow_redirect! # follow the redirect after submission to render 'users/show' template
     assert_template 'users/show'
+    assert_not flash.empty? # assert_not flash.alert also possible and passes
   end
 end

@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :microposts
+  has_many :microposts, dependent: :destroy
 
   before_save { email.downcase! } # same as self.email = email.downcase
   validates :name, presence: true, length: { maximum: 50 } # same as validates(:name, presence: true)
